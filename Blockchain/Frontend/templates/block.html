@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block title %} Block {% endblock %} {% block
+content %}
+<div class="grid-container">
+  <h1>Latest Blocks</h1>
+  <div class="blockheader">
+    <div class="bheader">Block Height</div>
+    <div class="bheader">Block Header</div>
+    <div class="Transactions">Transactions</div>
+    <div class="Size">Size (Bytes)</div>
+  </div>
+  {% for block in blocks[::-1] %}
+  <a
+    id="detail"
+    href="{{ url_for('block', blockHeader = block['BlockHeader']['blockHash'])}}"
+  >
+    <div class="block">
+      <div class="block-item Height">{{block["Height"]}}</div>
+      <div class="block-item BlockHeader">
+        {{block["BlockHeader"]['blockHash']}}
+      </div>
+      <div class="block-item TxCount">{{block["Txcount"]}}</div>
+      <div class="block-item BlockSize">{{block["Blocksize"]}}</div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

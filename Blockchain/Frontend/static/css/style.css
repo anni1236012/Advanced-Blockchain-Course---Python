@@ -1,0 +1,511 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+  --navHoverColor: linear-gradient(
+    to right,
+    rgba(11, 67, 71, 0.719),
+    hsla(157, 76%, 26%, 0.781)
+  );
+}
+
+body {
+  background-color: black;
+}
+
+#cover {
+  /* background-image: url('/static/images/wal5.jpg'); */
+  /* background-image: linear-gradient(110deg,black, black,rgba(230,85,237,255),rgba(254,238,148,255),rgba(230,85,237,90),purple); */
+
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.1),
+      rgba(212, 88, 216, 0.1),
+      rgba(0, 0, 0.5)
+    ),
+    url("/static/images/wal5.jpg");
+
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding: 2em;
+  position: relative;
+}
+
+#logo {
+  float: left;
+  height: 8em;
+  width: 8em;
+  background: inherit;
+  margin-left: 1em;
+}
+
+section ul {
+  list-style: none;
+}
+
+section li a {
+  position: relative;
+  float: left;
+  color: white;
+  font-size: 1.3em;
+  text-align: center;
+  margin-left: 1.5em;
+  padding: 0.8em 0.8em;
+  text-decoration: none;
+}
+
+section li a:hover {
+  /* background-image: var(--navHoverColor); */
+  border-bottom: 3px solid rgb(0, 247, 255);
+}
+
+section li a:active {
+  /* background-image: var(--navHoverColor); */
+  background-image: var(--navHoverColor);
+}
+
+section li .active {
+  border-bottom: 3px solid rgb(0, 247, 255);
+}
+
+.search-container {
+  margin-top: 0.5em;
+  margin-right: 3em;
+  float: right;
+}
+
+.search-container input[type="text"] {
+  width: 27em;
+  padding: 1em;
+  margin-top: 0.1em;
+  font-size: 1em;
+  border: none;
+  color: whitesmoke;
+  /* background-image: linear-gradient(to right, rgba(230,85,237,255),rgba(254,238,148,255)); */
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 89, 255),
+    rgb(225, 0, 255)
+  );
+}
+
+.search-container input::placeholder {
+  color: whitesmoke;
+}
+
+.search-container button {
+  float: right;
+  margin-top: 0.5em;
+  padding-left: 0.5em;
+  background-color: inherit;
+  border: none;
+}
+
+.search-container input:focus {
+  box-shadow: 0 0 2em #8df3eb;
+}
+
+.search-container button img {
+  width: 3em;
+  height: 3em;
+}
+
+.mainText {
+  clear: left;
+}
+
+.mainText > h1 {
+  position: absolute;
+  text-align: center;
+  margin-left: 3.5em;
+  font-size: 7em;
+  top: 30%;
+  color: whitesmoke;
+
+  /* background: linear-gradient(to bottom, rgba(231,84,237,255)    , rgba(255,239,148,255)    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.mainText > h2 {
+  position: absolute;
+  text-align: center;
+  margin-left: 3em;
+  margin-right: 1em;
+  font-size: 3em;
+  top: 50%;
+}
+
+/* Style Sheet for Block html */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 89, 255),
+    rgb(225, 0, 255)
+  );
+  /* background-color:rgb(204, 0, 255); */
+  margin: 8em 5em 0em 5em;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.grid-container h1 {
+  float: left;
+  font-size: 2em;
+  margin: 1em;
+}
+
+.grid-container .blockheader {
+  display: grid;
+  grid-template-columns: 10em 1fr 10em 10em;
+  margin-left: 1em;
+  padding: 1em;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.grid-container .block {
+  display: grid;
+  grid-template-columns: 10em 1fr 10em 10em;
+  margin-left: 1em;
+  padding: 1em 1em 1em 6em;
+  font-weight: bold;
+  border-top: 0.01em solid wheat;
+}
+
+.loadmore {
+  background-color: rgb(204, 0, 255);
+  border: none;
+  color: whitesmoke;
+  padding: 1em;
+  text-decoration: none;
+  text-align: center;
+  height: 3em;
+  width: 10em;
+  font-size: 1em;
+  margin-left: 44%;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+.grid-container a {
+  text-decoration: none;
+}
+.grid-container #detail:hover {
+  /* background-color: rgb(64, 224, 163); */
+  /* background-color: rgba(254,120,150,230); */
+  background-color: rgb(225, 0, 255);
+  border-radius: 4em;
+}
+
+.grid-container .block .block-item {
+  padding: 1em 1em 1em 0;
+  font-weight: normal;
+}
+
+/* Text align Txcount and size details underneath Header */
+.grid-container .block .TxCountx,
+.BlockSize {
+  text-align: center;
+}
+
+.grid-container .block .BlockHeader {
+  padding-left: 5em;
+}
+
+.grid-container1 .blockheader {
+  display: grid;
+  grid-template-columns: 1fr 22em;
+  margin-left: 1em;
+  padding: 1em;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.grid-container1 {
+  display: grid;
+  grid-template-columns: auto;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 89, 255),
+    rgb(225, 0, 255)
+  );
+  margin: 8em 5em 0em 5em;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.grid-container1 h1 {
+  float: left;
+  font-size: 2em;
+  margin: 1em;
+}
+
+.grid-container1 .block .BlockHeader {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.grid-container1 .block {
+  display: grid;
+  grid-template-columns: 1fr 15em;
+  margin-left: 1em;
+  padding: 1em;
+  font-weight: bold;
+  border-top: 0.01em solid wheat;
+}
+
+.grid-container1 a {
+  text-decoration: none;
+}
+
+.grid-container1 #detail:hover {
+  /* background-color: rgb(64, 224, 163); */
+  background-color: rgb(225, 0, 255);
+  border-radius: 4em;
+}
+
+.grid-container1 .block .block-item {
+  padding: 1em 1em 1em 0;
+  font-weight: normal;
+}
+
+.grid-container1 .block .BlockHeader {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+/* Secondry Nav Bar for Block,Mempool and Transcation Screen */
+
+.secNavBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.secNavBar li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+.secNavBar li:last-child {
+  border-right: none;
+}
+
+.secNavBar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.secNavBar li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.secNavBar .active {
+  background-color: #04aa6d;
+}
+
+/* Block Details Styles */
+.BlockNumber {
+  clear: left;
+  margin: 3em 3em 0em 3em;
+  border-radius: 1em;
+  text-align: left;
+  font-size: 2em;
+}
+
+.grid-container3 {
+  display: grid;
+  grid-template-columns: 20em 1fr;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 89, 255),
+    rgb(225, 0, 255)
+  );
+  margin: 1em 5em 0em 5em;
+  padding: 1em;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.grid-container3 .TxItem {
+  text-align: left;
+  padding: 1em;
+  font-size: 1.1em;
+  border-top: 0.01em solid whitesmoke;
+}
+
+.grid-container3 .TxHeader h3 {
+  padding-bottom: 1em;
+}
+
+.grid-container3 .TxItemDetail {
+  text-align: left;
+  padding: 1em;
+  padding-left: 10em;
+  font-size: 1.1em;
+  border-top: 0.01em solid whitesmoke;
+}
+
+.TransactionsHeader {
+  clear: left;
+  margin: 1em 3em 0em 3em;
+  border-radius: 1em;
+  text-align: left;
+  font-size: 2em;
+}
+
+.TxDetails h1,
+.TxHeader h1 {
+  padding: 1em;
+}
+.TranscationsDiv {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 89, 255),
+    rgb(225, 0, 255)
+  );
+  margin: 1em 5em 0em 5em;
+  border-radius: 1em;
+  text-align: left;
+  word-break: break-all;
+}
+
+.TxStyle {
+  padding: 1em 1em 1em 1em;
+}
+
+.TxStyle a {
+  text-decoration: none;
+}
+
+.TxStyle .TxId a {
+  color: rgb(0, 255, 157);
+}
+
+.TxHeader h1 {
+  color: rgb(0, 255, 242);
+}
+
+.TxStyle h3 {
+  padding-left: 1em;
+}
+
+.TxInput {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 0, 221),
+    rgb(143, 143, 143)
+  );
+  border-radius: 1em;
+  margin-top: 1em;
+  padding: 1em;
+}
+
+/* output style */
+
+.Txoutput {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 0, 221),
+    rgb(76, 0, 255)
+  );
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: 1em;
+}
+
+.address {
+  clear: both;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.address .addTag {
+  padding-left: 6em;
+}
+.address .addTag h1 {
+  font-size: 3em;
+}
+
+.address .addTag h3 {
+  color: cyan;
+}
+
+/*Send MAAN design*/
+
+/*Style Wallet Page*/
+.wallet-container {
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 89, 255),
+    rgb(225, 0, 255)
+  );
+  margin: 8em 5em 0em 5em;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.wallet-container h1 {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 2.3em;
+  padding: 1em 1em 0 1em;
+  margin-right: 3em;
+}
+
+#form {
+  margin-left: 8em;
+  margin-bottom: 3em;
+  font-size: 1.2em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#form input:focus {
+  box-shadow: 0 0 2em #8df3eb;
+}
+
+#form input {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 0, 221),
+    rgb(76, 0, 255)
+  );
+  border-radius: 1em;
+  padding: 1em;
+  width: 70vw;
+  border: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* Send Button Style*/
+#form input[type="submit"] {
+  width: 20vw;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 255, 234),
+    rgb(255, 0, 221)
+  );
+  margin-left: 25em;
+  font-size: 1em;
+}

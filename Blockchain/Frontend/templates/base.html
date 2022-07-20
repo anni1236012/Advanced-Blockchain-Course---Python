@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="refresh" content="{{ refreshtime }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/static/images/fav.PNG" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body>
+    <section id="cover">
+      <a href="/"> <img id="logo" src="/static/images/CODIES ALERT.png" /></a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{{url_for('block')}}">Blocks</a></li>
+        <li><a href="{{url_for('transactions')}}">Transactions</a></li>
+        <li><a href="{{url_for('mempool')}}">Mempool</a></li>
+        <li><a href="{{url_for('wallet')}}">Wallet</a></li>
+      </ul>
+
+      <div class="search-container">
+        <form action="/search">
+          <input
+            type="text"
+            placeholder="Search for Block header, Transaction Id or address"
+            name="search"
+            required
+          />
+          <button type="submit"><img src="/static/images/search.png" /></button>
+        </form>
+      </div>
+      {% block content%} {% endblock %}
+    </section>
+  </body>
+</html>

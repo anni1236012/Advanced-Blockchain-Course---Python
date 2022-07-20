@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block title %} Mempool {% endblock %} 
+{% block content%}
+
+<div class="grid-container1">
+{% if not Txs %}
+<h1
+    style="
+      color: whitesmoke;
+      text-align: center;
+      font-size: 2.3em;
+      padding: 1em 1em 0 1em;
+      margin-right: 3em;
+    "
+  >
+    Memory Pool (Unconfirmed Transactions)
+  </h1>
+  <h2
+    style="
+      color: cyan;
+      text-align: center;
+      font-size: 2em;
+      padding: 1em;
+      margin-right: 3em;
+    "
+  >
+    0 Transactions to Mine
+
+{% else %}
+<h1>Memory Pool (Unconfirmed Transactions)</h1>
+  <h2 style="color: whitesmoke; font-size: 2em; padding: 0.3em 0 0.3em 1em">
+    {{ Txs|length }} Transactions
+  </h2>
+
+  
+    <div class="blockheader">
+      <div class="bheader">Transaction ID</div>
+      <div class="bheader">Amount</div>
+    </div>
+  
+
+  {% for TxId in Txs|reverse %}
+  <a href="{{ url_for('memTxDetails', txid=TxId) }}">
+    <div class="block">
+      <div class="block-item TxId">{{ TxId }}</div>
+      <div class="block-item prev_tx">{{ Txs[TxId][1] }} BTC</div>
+    </div>
+  </a>
+
+  {% endfor %}
+{% endif %}
+</div>
+{% endblock %}
