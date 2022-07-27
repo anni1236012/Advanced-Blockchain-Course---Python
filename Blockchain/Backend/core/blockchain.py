@@ -71,10 +71,10 @@ class Blockchain:
                             sync.startDownload(localHostPort - 1, port, True)
                   
                     except Exception as err:
-                        print(f"Error while publishing or Downloading a Blockchain\n{err}")
+                        pass
                     
         except Exception as err:
-            print(f"Error while downloading the Blockchain \n{err}")
+            pass
        
     """ Keep Track of all the unspent Transaction in cache memory for fast retrival"""
     def store_uxtos_in_cache(self):
@@ -340,7 +340,9 @@ class Blockchain:
             newBlock = Block(BlockHeight, self.Blocksize, blockheader, len(self.addTransactionsInBlock),
                             self.addTransactionsInBlock)
             blockheader.to_bytes()
-            self.BroadcastBlock(newBlock)
+            block = copy.deepcopy(newBlock)
+            broadcastNewBlock = Process(target = self.BroadcastBlock, args = (block, ))
+            broadcastNewBlock.start()
             blockheader.to_hex()
             self.remove_spent_Transactions()
             self.remove_transactions_from_memorypool()
