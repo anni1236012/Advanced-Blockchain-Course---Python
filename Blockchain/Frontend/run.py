@@ -10,6 +10,7 @@ from Blockchain.Backend.core.database.database import BlockchainDB, NodeDB
 from Blockchain.Backend.util.util import encode_base58, decode_base58
 from Blockchain.Backend.core.network.syncManager import syncManager
 from hashlib import sha256
+from multiprocessing import Process
 from flask_qrcode import QRcode
 
 app = Flask(__name__)
@@ -193,12 +194,13 @@ def wallet():
 
             if verified:
                 MEMPOOL[TxObj.TxId] = TxObj
-                broadcastTx(TxObj)
+                relayTxs = Process(target = broadcastTx, args = (TxObj, localHostPort)) 
+                relayTxs.start()
                 message = "Transaction added in memory Pool"
 
     return render_template("wallet.html", message=message)
 
-def broadcastTx(TxObj):
+def broadcastTx(TxObj, localHostPort = None):
     try:
         node = NodeDB()
         portList = node.read()
@@ -211,10 +213,10 @@ def broadcastTx(TxObj):
                     sync.publishTx(TxObj)
                 
                 except Exception as err:
-                    print(f"Error while publishing or Downloading a Blockchain\n{err}")
+                    pass
                 
     except Exception as err:
-        print(f"Error while downloading the Blockchain \n{err}")
+        pass
 
 def main(utxos, MemPool, port, localPort):
     global UTXOS
