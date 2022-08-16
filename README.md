@@ -15,7 +15,7 @@ But, In this course you will create everything in this course from scratch, incl
 
 # Steps to clone and run it locally
 
-1. git clone https://github.com/anni1236012/Python-Blockchain
+1. git clone https://github.com/anni1236012/Advanced-Blockchain-Course---Python
 2. cd Python-Blockchain/Blockchain
 3. pip install -r requirements.txt
 4. search sys.path.append("/Users/Vmaha/Desktop/Bitcoin") and replace all it with your path 
