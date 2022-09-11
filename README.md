@@ -5,7 +5,7 @@ In contrast to other courses, you will learn how to code the peer-to-peer networ
 One of the most crucial components of a blockchain is a peer network, but in most courses it is not implemented, and in those that do, third-party libraries or services are used to imitate p2p behavior.
 But, In this course you will create everything in this course from scratch, including the P2P Network.
 
-## [Click here to check the Complete 16 Hours Course](https://www.udemy.com/course/advanced-blockchain-course-python/?referralCode=DEAE60079BFB4387226B)
+## [Complete Udemy Course](https://www.udemy.com/course/advanced-blockchain-course-python/?referralCode=DEAE60079BFB4387226B)
 
 ![image](https://user-images.githubusercontent.com/86418669/179878712-15988107-e468-40cf-8aa0-ca8cc4ade30b.png)
 
