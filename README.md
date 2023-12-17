@@ -14,7 +14,7 @@ But, In this course you will create everything in this course from scratch, incl
 
 
 # Steps to clone and run it locally
-
+**Make sure your python version is Python 3.10.12.**
 1. git clone https://github.com/anni1236012/Advanced-Blockchain-Course---Python Bitcoin
 2. cd Bitcoin 
 3. pip install -r requirements.txt
