@@ -160,7 +160,7 @@ def address(publicAddress):
 
         for TxId in AllUtxos:
            for tx_out in AllUtxos[TxId].tx_outs:
-            if tx_out.script_pubkey.cmds[2] == h160.hex():
+            if tx_out.script_pubkey.cmds[2] == h160:
                 amount += tx_out.amount
                 AccountUtxos.append(AllUtxos[TxId])
         
